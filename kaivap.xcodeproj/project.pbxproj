@@ -14,7 +14,9 @@
 		0693B0BE201EC32D00BB8524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */; };
 		0693B0C9201EC32D00BB8524 /* kaivapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0C8201EC32D00BB8524 /* kaivapTests.swift */; };
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
-		DA370C275139537B1B520D0E /* libPods-kaivap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */; };
+		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
+		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
+		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +50,10 @@
 		0693B0CF201EC32D00BB8524 /* kaivapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kaivapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaivapUITests.swift; sourceTree = "<group>"; };
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0693B0E1201F2A2D00BB8524 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		0693B0E3201F30FD00BB8524 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.release.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.release.xcconfig"; sourceTree = "<group>"; };
-		3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kaivap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaivap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA370C275139537B1B520D0E /* libPods-kaivap.a in Frameworks */,
+				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,8 @@
 			children = (
 				0693B0B3201EC32D00BB8524 /* AppDelegate.swift */,
 				0693B0B5201EC32D00BB8524 /* ViewController.swift */,
+				0693B0E3201F30FD00BB8524 /* API.swift */,
+				0693B0E1201F2A2D00BB8524 /* Repository.swift */,
 				0693B0B7201EC32D00BB8524 /* Main.storyboard */,
 				0693B0BA201EC32D00BB8524 /* Assets.xcassets */,
 				0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */,
@@ -135,7 +141,7 @@
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */,
+				3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -307,9 +313,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -343,6 +356,8 @@
 			files = (
 				0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */,
 				0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */,
+				0693B0E4201F30FD00BB8524 /* API.swift in Sources */,
+				0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

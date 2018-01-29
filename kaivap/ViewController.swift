@@ -6,7 +6,9 @@
 //  Copyright © 2018年 KokiHirokawa. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import APIKit
 import GoogleMaps
 import GooglePlaces
 
@@ -59,9 +61,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             mapView.camera = camera
         } else {
             mapView.animate(to: camera)
+            let request = GetElevationRequest(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+            Session.send(request) { result in
+                switch result {
+                case .success(let elevation):
+                    print(elevation)
+                case .failure(let error):
+                    print("error: \(error)")
+                }
+            }
         }
-        
-//        listLikelyPlaces()
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -70,7 +79,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print("Location access was restricted.")
         case .denied:
             print("User denied access to location.")
-            // Display the map using the default location.
             mapView.isHidden = false
         case .notDetermined:
             print("Location status not determined.")
