@@ -14,6 +14,7 @@
 		0693B0BE201EC32D00BB8524 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */; };
 		0693B0C9201EC32D00BB8524 /* kaivapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0C8201EC32D00BB8524 /* kaivapTests.swift */; };
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
+		DA370C275139537B1B520D0E /* libPods-kaivap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,9 @@
 		0693B0CF201EC32D00BB8524 /* kaivapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = kaivapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kaivapUITests.swift; sourceTree = "<group>"; };
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.release.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.release.xcconfig"; sourceTree = "<group>"; };
+		3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-kaivap.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA370C275139537B1B520D0E /* libPods-kaivap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +86,8 @@
 				0693B0C7201EC32D00BB8524 /* kaivapTests */,
 				0693B0D2201EC32D00BB8524 /* kaivapUITests */,
 				0693B0B1201EC32D00BB8524 /* Products */,
+				F74C2B1BF42CF7FF3310A6B2 /* Pods */,
+				109E77EE6C8BB2F6E00AEA73 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +132,23 @@
 			path = kaivapUITests;
 			sourceTree = "<group>";
 		};
+		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3CDC2C706B983BE9B3280586 /* libPods-kaivap.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F74C2B1BF42CF7FF3310A6B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */,
+				1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +156,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0693B0D8201EC32D00BB8524 /* Build configuration list for PBXNativeTarget "kaivap" */;
 			buildPhases = (
+				DA9E59A972E11F5C143DFAAD /* [CP] Check Pods Manifest.lock */,
 				0693B0AC201EC32D00BB8524 /* Sources */,
 				0693B0AD201EC32D00BB8524 /* Frameworks */,
 				0693B0AE201EC32D00BB8524 /* Resources */,
+				C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */,
+				73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,61 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DA9E59A972E11F5C143DFAAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-kaivap-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0693B0AC201EC32D00BB8524 /* Sources */ = {
@@ -424,6 +506,7 @@
 		};
 		0693B0D9201EC32D00BB8524 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -439,6 +522,7 @@
 		};
 		0693B0DA201EC32D00BB8524 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
