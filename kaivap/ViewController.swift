@@ -10,17 +10,13 @@ import Foundation
 import UIKit
 import APIKit
 import GoogleMaps
-import GooglePlaces
 
 class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
-    var placesClient: GMSPlacesClient!
     var zoomLevel: Float = 15.0
-    var likelyPlaces: [GMSPlace] = []
-    var selectedPlace: GMSPlace?
     
     override func loadView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
@@ -44,8 +40,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-        
-        placesClient = GMSPlacesClient.shared()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -96,7 +90,5 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
 }
 
