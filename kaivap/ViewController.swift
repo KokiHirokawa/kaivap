@@ -62,7 +62,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             Session.send(request) { result in
                 switch result {
                 case .success(let elevation):
-                    print(elevation)
+                    self.elevationLabel.text = "\(elevation.elevation)m"
                 case .failure(let error):
                     print("error: \(error)")
                 }
