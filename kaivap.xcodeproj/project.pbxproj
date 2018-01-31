@@ -110,9 +110,9 @@
 			children = (
 				0693B0B3201EC32D00BB8524 /* AppDelegate.swift */,
 				0693B0B5201EC32D00BB8524 /* ViewController.swift */,
+				0693B0B7201EC32D00BB8524 /* Main.storyboard */,
 				0693B0E3201F30FD00BB8524 /* API.swift */,
 				0693B0E1201F2A2D00BB8524 /* Repository.swift */,
-				0693B0B7201EC32D00BB8524 /* Main.storyboard */,
 				0693B0BA201EC32D00BB8524 /* Assets.xcassets */,
 				0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */,
 				0693B0BF201EC32D00BB8524 /* Info.plist */,

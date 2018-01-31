@@ -15,24 +15,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     var locationManager: CLLocationManager!
     var currentLocation: CLLocation?
-    var mapView: GMSMapView!
     var zoomLevel: Float = 15.0
+    var mapView: GMSMapView!
     
-    override func loadView() {
+    @IBOutlet weak var elevationLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupView()
+    }
+    
+    func setupView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-44)
+        mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
-        view = mapView
-        
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        view.addSubview(mapView)
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
