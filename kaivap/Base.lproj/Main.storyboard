@@ -63,12 +63,44 @@
                                 </constraints>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
                             </stackView>
+                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yic-H9-zl5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
+                                <subviews>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-kc-4us">
+                                        <rect key="frame" x="185" y="0.0" width="4" height="579"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="4" id="qMG-YY-fwH"/>
+                                        </constraints>
+                                    </view>
+                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-Al-WVV">
+                                        <rect key="frame" x="0.0" y="287.5" width="375" height="4"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="4" id="YIP-hd-3fj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="GMj-Al-WVV" firstAttribute="leading" secondItem="yic-H9-zl5" secondAttribute="leading" id="0Cn-kv-GU7"/>
+                                    <constraint firstItem="QcG-kc-4us" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="top" id="FHX-Yf-lfW"/>
+                                    <constraint firstAttribute="bottom" secondItem="QcG-kc-4us" secondAttribute="bottom" id="HnN-5i-83V"/>
+                                    <constraint firstItem="QcG-kc-4us" firstAttribute="centerX" secondItem="yic-H9-zl5" secondAttribute="centerX" id="Spo-7m-Ac6"/>
+                                    <constraint firstItem="GMj-Al-WVV" firstAttribute="centerY" secondItem="yic-H9-zl5" secondAttribute="centerY" id="VlY-mO-hgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="GMj-Al-WVV" secondAttribute="trailing" id="aHY-9o-q1M"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Og0-EX-VaX" secondAttribute="trailing" id="2zn-fK-fNR"/>
                             <constraint firstItem="Og0-EX-VaX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AFN-NJ-BOs"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Og0-EX-VaX" secondAttribute="bottom" id="Bql-Nw-fle"/>
+                            <constraint firstItem="yic-H9-zl5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TXZ-YW-4hI"/>
+                            <constraint firstItem="yic-H9-zl5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="YyL-i4-8QW"/>
+                            <constraint firstItem="Og0-EX-VaX" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="bottom" id="jB3-IG-ZPI"/>
+                            <constraint firstItem="yic-H9-zl5" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wdu-YB-FTZ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

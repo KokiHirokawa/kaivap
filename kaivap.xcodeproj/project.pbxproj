@@ -16,6 +16,11 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
+		06B37E2F20244696006412E9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E3020244696006412E9 /* SwiftyJSON.framework */; };
+		06B37E312024469D006412E9 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E342024469D006412E9 /* APIKit.framework */; };
+		06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E352024469D006412E9 /* Himotoki.framework */; };
+		06B37E332024469D006412E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E362024469D006412E9 /* Result.framework */; };
+		06B37E3720244BAF006412E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E3820244BAF006412E9 /* Alamofire.framework */; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +57,15 @@
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0693B0E1201F2A2D00BB8524 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0693B0E3201F30FD00BB8524 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06B37E2B2024462F006412E9 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E2C2024462F006412E9 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E2D2024462F006412E9 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E2E2024462F006412E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E3020244696006412E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E342024469D006412E9 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E352024469D006412E9 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E362024469D006412E9 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B37E3820244BAF006412E9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.release.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.release.xcconfig"; sourceTree = "<group>"; };
 		3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaivap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -62,6 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06B37E3720244BAF006412E9 /* Alamofire.framework in Frameworks */,
+				06B37E312024469D006412E9 /* APIKit.framework in Frameworks */,
+				06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */,
+				06B37E332024469D006412E9 /* Result.framework in Frameworks */,
+				06B37E2F20244696006412E9 /* SwiftyJSON.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -141,6 +160,15 @@
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06B37E3820244BAF006412E9 /* Alamofire.framework */,
+				06B37E342024469D006412E9 /* APIKit.framework */,
+				06B37E352024469D006412E9 /* Himotoki.framework */,
+				06B37E362024469D006412E9 /* Result.framework */,
+				06B37E3020244696006412E9 /* SwiftyJSON.framework */,
+				06B37E2B2024462F006412E9 /* APIKit.framework */,
+				06B37E2C2024462F006412E9 /* Himotoki.framework */,
+				06B37E2D2024462F006412E9 /* Result.framework */,
+				06B37E2E2024462F006412E9 /* SwiftyJSON.framework */,
 				3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */,
 			);
 			name = Frameworks;
@@ -315,14 +343,18 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

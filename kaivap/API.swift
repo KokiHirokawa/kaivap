@@ -26,12 +26,6 @@ extension BaseRequest {
     }
 }
 
-//extension BaseRequest where Response: Decodable {
-//    func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-//        return try decodeValue(object)
-//    }
-//}
-
 protocol GetRequest: BaseRequest { }
 extension GetRequest {
     var method: HTTPMethod {
@@ -61,7 +55,6 @@ struct GetElevationRequest: GetRequest {
     }
     
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
-        print(object)
         return try decodeValue(object)
     }
 }

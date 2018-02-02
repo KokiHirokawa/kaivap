@@ -322,6 +322,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-88)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
+        do {
+            mapView.mapStyle = try GMSMapStyle(jsonString: mapStyle)
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
         mapView.delegate = self
 
         let marker = GMSMarker()

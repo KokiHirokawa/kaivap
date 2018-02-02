@@ -7,4 +7,6 @@ target 'kaivap' do
   pod 'GooglePlaces'
   pod 'APIKit', '~> 3.1'
   pod "Himotoki", "~> 3.1"
+  pod "SwiftyJSON"
+  pod 'Alamofire'
 end
