@@ -335,6 +335,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         marker.snippet = "Australia"
         marker.map = mapView
         view.addSubview(mapView)
+        view.sendSubview(toBack: mapView)
 
         calculateButton.layer.borderWidth = 1.0
         calculateButton.layer.borderColor = UIColor(hex: "dadada").cgColor

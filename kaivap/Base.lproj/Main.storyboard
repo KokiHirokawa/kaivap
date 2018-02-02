@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,6 +35,7 @@
                                                 <rect key="frame" x="6" y="6" width="32" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="32" id="Rda-er-MBA"/>
+                                                    <constraint firstAttribute="width" secondItem="uNt-iV-atg" secondAttribute="height" multiplier="1:1" id="h0d-3j-F8r"/>
                                                     <constraint firstAttribute="height" constant="32" id="r9H-Zm-jbz"/>
                                                 </constraints>
                                             </imageView>
@@ -66,29 +68,20 @@
                             <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yic-H9-zl5">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <subviews>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcG-kc-4us">
-                                        <rect key="frame" x="185" y="0.0" width="4" height="579"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="iEg-cE-l95">
+                                        <rect key="frame" x="171.5" y="273.5" width="32" height="32"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="4" id="qMG-YY-fwH"/>
+                                            <constraint firstAttribute="width" constant="32" id="7cS-ns-b92"/>
+                                            <constraint firstAttribute="height" constant="32" id="myP-IV-DFb"/>
+                                            <constraint firstAttribute="width" secondItem="iEg-cE-l95" secondAttribute="height" multiplier="1:1" id="qt8-ye-WCV"/>
                                         </constraints>
-                                    </view>
-                                    <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMj-Al-WVV">
-                                        <rect key="frame" x="0.0" y="287.5" width="375" height="4"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="4" id="YIP-hd-3fj"/>
-                                        </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="GMj-Al-WVV" firstAttribute="leading" secondItem="yic-H9-zl5" secondAttribute="leading" id="0Cn-kv-GU7"/>
-                                    <constraint firstItem="QcG-kc-4us" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="top" id="FHX-Yf-lfW"/>
-                                    <constraint firstAttribute="bottom" secondItem="QcG-kc-4us" secondAttribute="bottom" id="HnN-5i-83V"/>
-                                    <constraint firstItem="QcG-kc-4us" firstAttribute="centerX" secondItem="yic-H9-zl5" secondAttribute="centerX" id="Spo-7m-Ac6"/>
-                                    <constraint firstItem="GMj-Al-WVV" firstAttribute="centerY" secondItem="yic-H9-zl5" secondAttribute="centerY" id="VlY-mO-hgY"/>
-                                    <constraint firstAttribute="trailing" secondItem="GMj-Al-WVV" secondAttribute="trailing" id="aHY-9o-q1M"/>
+                                    <constraint firstItem="iEg-cE-l95" firstAttribute="centerY" secondItem="yic-H9-zl5" secondAttribute="centerY" id="PtS-ao-I8B"/>
+                                    <constraint firstItem="iEg-cE-l95" firstAttribute="centerX" secondItem="yic-H9-zl5" secondAttribute="centerX" id="SVD-f5-yEn"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -115,6 +108,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="marker" width="128" height="128"/>
         <image name="ruler" width="256" height="256"/>
     </resources>
 </document>

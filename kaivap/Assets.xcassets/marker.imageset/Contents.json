@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "elevation.png",
+      "filename" : "marker.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "elevation_2x.png",
+      "filename" : "marker_2x.png",
       "scale" : "2x"
     },
     {

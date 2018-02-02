@@ -16,11 +16,9 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
-		06B37E2F20244696006412E9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E3020244696006412E9 /* SwiftyJSON.framework */; };
 		06B37E312024469D006412E9 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E342024469D006412E9 /* APIKit.framework */; };
 		06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E352024469D006412E9 /* Himotoki.framework */; };
 		06B37E332024469D006412E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E362024469D006412E9 /* Result.framework */; };
-		06B37E3720244BAF006412E9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E3820244BAF006412E9 /* Alamofire.framework */; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,11 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B37E3720244BAF006412E9 /* Alamofire.framework in Frameworks */,
 				06B37E312024469D006412E9 /* APIKit.framework in Frameworks */,
 				06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */,
 				06B37E332024469D006412E9 /* Result.framework in Frameworks */,
-				06B37E2F20244696006412E9 /* SwiftyJSON.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,18 +339,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-kaivap/Pods-kaivap-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/APIKit/APIKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Himotoki/Himotoki.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/APIKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Himotoki.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
