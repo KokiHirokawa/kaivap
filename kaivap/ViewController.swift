@@ -11,14 +11,30 @@ import UIKit
 import APIKit
 import GoogleMaps
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+extension UIColor {
+    convenience init(hex: String, alpha: CGFloat) {
+        let v = hex.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
+        let r = CGFloat(Int(v[0] + v[1], radix: 16) ?? 0) / 255.0
+        let g = CGFloat(Int(v[2] + v[3], radix: 16) ?? 0) / 255.0
+        let b = CGFloat(Int(v[4] + v[5], radix: 16) ?? 0) / 255.0
+        self.init(red: r, green: g, blue: b, alpha: alpha)
+    }
+    
+    convenience init(hex: String) {
+        self.init(hex: hex, alpha: 1.0)
+    }
+}
+
+class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     
     var locationManager: CLLocationManager!
-    var currentLocation: CLLocation?
+//    var currentLocation: CLLocation?
+    var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
     var mapView: GMSMapView!
     
     @IBOutlet weak var elevationLabel: UILabel!
+    @IBOutlet weak var calculateButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,15 +43,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     func setupView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-44)
+        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-88)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
+        mapView.delegate = self
+        
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
         view.addSubview(mapView)
+        
+        calculateButton.layer.borderWidth = 1.0
+        calculateButton.layer.borderColor = UIColor(hex: "dadada").cgColor
+        calculateButton.layer.cornerRadius = 22
         
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -89,7 +111,26 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
     }
-
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        currentCameraPosition = position
+    }
+    
+    @IBAction func didPressCalculateButton(_ sender: Any) {
+        
+        if let currentCameraPosition = currentCameraPosition {
+            let request = GetElevationRequest(lat: currentCameraPosition.target.latitude, lng: currentCameraPosition.target.longitude)
+            Session.send(request) { result in
+                switch result {
+                case .success(let elevation):
+                    self.elevationLabel.text = "\(elevation.elevation)m"
+                case .failure(let error):
+                    print("error: \(error)")
+                }
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

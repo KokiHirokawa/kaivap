@@ -18,26 +18,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-RB-W13">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <color key="backgroundColor" red="0.23004921066402761" green="1" blue="0.97805442409875354" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Og0-EX-VaX">
+                                <rect key="frame" x="0.0" y="579" width="375" height="88"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NB2-UB-rhg">
+                                        <rect key="frame" x="16" y="22" width="44" height="44"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewY-P4-0zd">
+                                                <rect key="frame" x="0.0" y="0.0" width="44" height="44"/>
+                                                <connections>
+                                                    <action selector="didPressCalculateButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kO3-IY-UsX"/>
+                                                </connections>
+                                            </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ruler" translatesAutoresizingMaskIntoConstraints="NO" id="uNt-iV-atg">
+                                                <rect key="frame" x="6" y="6" width="32" height="32"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="Rda-er-MBA"/>
+                                                    <constraint firstAttribute="height" constant="32" id="r9H-Zm-jbz"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="ewY-P4-0zd" secondAttribute="bottom" id="Ao3-FP-NdK"/>
+                                            <constraint firstItem="ewY-P4-0zd" firstAttribute="leading" secondItem="NB2-UB-rhg" secondAttribute="leading" id="KxT-ux-ptm"/>
+                                            <constraint firstAttribute="height" constant="44" id="SZl-Pw-fFZ"/>
+                                            <constraint firstAttribute="width" constant="44" id="cmT-JO-B9W"/>
+                                            <constraint firstItem="uNt-iV-atg" firstAttribute="centerX" secondItem="NB2-UB-rhg" secondAttribute="centerX" id="gtR-KV-5QI"/>
+                                            <constraint firstAttribute="trailing" secondItem="ewY-P4-0zd" secondAttribute="trailing" id="m8q-zv-2UI"/>
+                                            <constraint firstItem="uNt-iV-atg" firstAttribute="centerY" secondItem="NB2-UB-rhg" secondAttribute="centerY" id="zfp-js-Mfs"/>
+                                            <constraint firstItem="ewY-P4-0zd" firstAttribute="top" secondItem="NB2-UB-rhg" secondAttribute="top" id="zr0-RV-FUK"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fRS-RB-W13">
+                                        <rect key="frame" x="332" y="34" width="27" height="20.5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="rHn-KD-Zuy"/>
+                                    <constraint firstAttribute="height" constant="88" id="k5U-Y0-eWg"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="16" bottom="8" trailing="16"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fRS-RB-W13" secondAttribute="trailing" id="ED5-C5-f2S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fRS-RB-W13" secondAttribute="bottom" id="WMX-z5-b6a"/>
-                            <constraint firstItem="fRS-RB-W13" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="t1p-ZG-mIb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Og0-EX-VaX" secondAttribute="trailing" id="2zn-fK-fNR"/>
+                            <constraint firstItem="Og0-EX-VaX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="AFN-NJ-BOs"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Og0-EX-VaX" secondAttribute="bottom" id="Bql-Nw-fle"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="calculateButton" destination="ewY-P4-0zd" id="HQi-X1-Toh"/>
                         <outlet property="elevationLabel" destination="fRS-RB-W13" id="O6k-Ne-1XB"/>
                     </connections>
                 </viewController>
@@ -46,4 +82,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ruler" width="256" height="256"/>
+    </resources>
 </document>

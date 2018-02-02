@@ -290,7 +290,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -309,7 +309,7 @@
 		};
 		C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -527,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
 				INFOPLIST_FILE = kaivap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -543,6 +544,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
 				INFOPLIST_FILE = kaivap/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
