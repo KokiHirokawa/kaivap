@@ -319,7 +319,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     func setupView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-88)
+        let footerViewHeight: CGFloat = 88.0
+        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-footerViewHeight)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
         do {
@@ -365,7 +366,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             Session.send(request) { result in
                 switch result {
                 case .success(let elevation):
-                    self.elevationLabel.text = "\(elevation.elevation)m"
+                    self.elevationLabel.text = elevation.elevation.description
                 case .failure(let error):
                     print("error: \(error)")
                 }
@@ -404,7 +405,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             Session.send(request) { result in
                 switch result {
                 case .success(let elevation):
-                    self.elevationLabel.text = "\(elevation.elevation)m"
+                    self.elevationLabel.text = elevation.elevation.description
                 case .failure(let error):
                     print("error: \(error)")
                 }
