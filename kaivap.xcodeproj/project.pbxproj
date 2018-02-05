@@ -16,9 +16,6 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
-		06B37E312024469D006412E9 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E342024469D006412E9 /* APIKit.framework */; };
-		06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E352024469D006412E9 /* Himotoki.framework */; };
-		06B37E332024469D006412E9 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06B37E362024469D006412E9 /* Result.framework */; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +37,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06286D5720281795000331A7 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06286D5A2028179B000331A7 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06286D5B2028179B000331A7 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B0201EC32D00BB8524 /* kaivap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaivap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B3201EC32D00BB8524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693B0B5201EC32D00BB8524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,9 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06B37E312024469D006412E9 /* APIKit.framework in Frameworks */,
-				06B37E322024469D006412E9 /* Himotoki.framework in Frameworks */,
-				06B37E332024469D006412E9 /* Result.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +153,9 @@
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				06286D5A2028179B000331A7 /* Himotoki.framework */,
+				06286D5B2028179B000331A7 /* Result.framework */,
+				06286D5720281795000331A7 /* APIKit.framework */,
 				06B37E3820244BAF006412E9 /* Alamofire.framework */,
 				06B37E342024469D006412E9 /* APIKit.framework */,
 				06B37E352024469D006412E9 /* Himotoki.framework */,
@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					0693B0AF201EC32D00BB8524 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					0693B0C3201EC32D00BB8524 = {
 						CreatedOnToolsVersion = 9.2;
@@ -548,13 +548,17 @@
 			baseConfigurationReference = 50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
 				INFOPLIST_FILE = kaivap/Info.plist;
+				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "167d9a35-aa0d-4586-a660-056569fc5d6b";
+				PROVISIONING_PROFILE_SPECIFIER = kaivap_dev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,13 +569,16 @@
 			baseConfigurationReference = 1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
 				INFOPLIST_FILE = kaivap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "fa801970-1862-4c9c-82cc-f00088053915";
+				PROVISIONING_PROFILE_SPECIFIER = kaivap_dist;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
