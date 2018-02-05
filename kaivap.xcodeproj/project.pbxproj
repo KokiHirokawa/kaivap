@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06286D5C20281CDE000331A7 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D5F20281CDE000331A7 /* APIKit.framework */; };
+		06286D5D20281CDE000331A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D6020281CDE000331A7 /* Himotoki.framework */; };
+		06286D5E20281CDE000331A7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D6120281CDE000331A7 /* Result.framework */; };
 		0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B3201EC32D00BB8524 /* AppDelegate.swift */; };
 		0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B5201EC32D00BB8524 /* ViewController.swift */; };
 		0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0B7201EC32D00BB8524 /* Main.storyboard */; };
@@ -37,9 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06286D5720281795000331A7 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06286D5A2028179B000331A7 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06286D5B2028179B000331A7 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06286D5F20281CDE000331A7 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06286D6020281CDE000331A7 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		06286D6120281CDE000331A7 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B0201EC32D00BB8524 /* kaivap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaivap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B3201EC32D00BB8524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693B0B5201EC32D00BB8524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,15 +58,6 @@
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0693B0E1201F2A2D00BB8524 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0693B0E3201F30FD00BB8524 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
-		06B37E2B2024462F006412E9 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E2C2024462F006412E9 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E2D2024462F006412E9 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E2E2024462F006412E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E3020244696006412E9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E342024469D006412E9 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E352024469D006412E9 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E362024469D006412E9 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06B37E3820244BAF006412E9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.release.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.release.xcconfig"; sourceTree = "<group>"; };
 		3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaivap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +68,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06286D5C20281CDE000331A7 /* APIKit.framework in Frameworks */,
+				06286D5D20281CDE000331A7 /* Himotoki.framework in Frameworks */,
+				06286D5E20281CDE000331A7 /* Result.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -153,18 +150,9 @@
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06286D5A2028179B000331A7 /* Himotoki.framework */,
-				06286D5B2028179B000331A7 /* Result.framework */,
-				06286D5720281795000331A7 /* APIKit.framework */,
-				06B37E3820244BAF006412E9 /* Alamofire.framework */,
-				06B37E342024469D006412E9 /* APIKit.framework */,
-				06B37E352024469D006412E9 /* Himotoki.framework */,
-				06B37E362024469D006412E9 /* Result.framework */,
-				06B37E3020244696006412E9 /* SwiftyJSON.framework */,
-				06B37E2B2024462F006412E9 /* APIKit.framework */,
-				06B37E2C2024462F006412E9 /* Himotoki.framework */,
-				06B37E2D2024462F006412E9 /* Result.framework */,
-				06B37E2E2024462F006412E9 /* SwiftyJSON.framework */,
+				06286D5F20281CDE000331A7 /* APIKit.framework */,
+				06286D6020281CDE000331A7 /* Himotoki.framework */,
+				06286D6120281CDE000331A7 /* Result.framework */,
 				3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */,
 			);
 			name = Frameworks;
@@ -324,7 +312,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
