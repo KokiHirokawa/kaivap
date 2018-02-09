@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06286D5C20281CDE000331A7 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D5F20281CDE000331A7 /* APIKit.framework */; };
-		06286D5D20281CDE000331A7 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D6020281CDE000331A7 /* Himotoki.framework */; };
-		06286D5E20281CDE000331A7 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06286D6120281CDE000331A7 /* Result.framework */; };
 		0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B3201EC32D00BB8524 /* AppDelegate.swift */; };
 		0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B5201EC32D00BB8524 /* ViewController.swift */; };
 		0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0B7201EC32D00BB8524 /* Main.storyboard */; };
@@ -19,7 +16,13 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
-		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; };
+		0699E64C202DFE040008DF09 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; };
+		0699E64D202DFE040008DF09 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0699E64E202DFE040008DF09 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; };
+		0699E64F202DFE040008DF09 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0699E650202DFE040008DF09 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; };
+		0699E651202DFE040008DF09 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +42,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0699E652202DFE050008DF09 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0699E651202DFE040008DF09 /* Result.framework in Embed Frameworks */,
+				0699E64F202DFE040008DF09 /* Himotoki.framework in Embed Frameworks */,
+				0699E64D202DFE040008DF09 /* APIKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		06286D5F20281CDE000331A7 /* APIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = APIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06286D6020281CDE000331A7 /* Himotoki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Himotoki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		06286D6120281CDE000331A7 /* Result.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Result.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B0201EC32D00BB8524 /* kaivap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaivap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B3201EC32D00BB8524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693B0B5201EC32D00BB8524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +74,9 @@
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0693B0E1201F2A2D00BB8524 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0693B0E3201F30FD00BB8524 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06C3B839202DC5F6002D0E46 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		06C3B83A202DC5F6002D0E46 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
+		06C3B83B202DC5F6002D0E46 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
 		1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.release.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.release.xcconfig"; sourceTree = "<group>"; };
 		3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_kaivap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-kaivap.debug.xcconfig"; path = "Pods/Target Support Files/Pods-kaivap/Pods-kaivap.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,9 +87,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06286D5C20281CDE000331A7 /* APIKit.framework in Frameworks */,
-				06286D5D20281CDE000331A7 /* Himotoki.framework in Frameworks */,
-				06286D5E20281CDE000331A7 /* Result.framework in Frameworks */,
+				0699E650202DFE040008DF09 /* Result.framework in Frameworks */,
+				0699E64E202DFE040008DF09 /* Himotoki.framework in Frameworks */,
+				0699E64C202DFE040008DF09 /* APIKit.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,9 +169,9 @@
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06286D5F20281CDE000331A7 /* APIKit.framework */,
-				06286D6020281CDE000331A7 /* Himotoki.framework */,
-				06286D6120281CDE000331A7 /* Result.framework */,
+				06C3B83B202DC5F6002D0E46 /* APIKit.framework */,
+				06C3B83A202DC5F6002D0E46 /* Himotoki.framework */,
+				06C3B839202DC5F6002D0E46 /* Result.framework */,
 				3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */,
 			);
 			name = Frameworks;
@@ -180,6 +199,8 @@
 				0693B0AE201EC32D00BB8524 /* Resources */,
 				C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */,
 				73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */,
+				06C3B83F202DC6BE002D0E46 /* ShellScript */,
+				0699E652202DFE050008DF09 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -300,6 +321,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		06C3B83F202DC6BE002D0E46 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/APIKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Himotoki.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
@@ -312,8 +349,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -537,19 +573,24 @@
 			baseConfigurationReference = 50B85ED1D0C3F9C3C6923919 /* Pods-kaivap.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Koki Hirokawa (XYT4564U83)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Koki Hirokawa (XYT4564U83)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = kaivap/Info.plist;
 				INSTALL_PATH = "$(LOCAL_APPS_DIR)";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "167d9a35-aa0d-4586-a660-056569fc5d6b";
 				PROVISIONING_PROFILE_SPECIFIER = kaivap_dev;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -558,18 +599,23 @@
 			baseConfigurationReference = 1E9FEE555278F1AADFE18067 /* Pods-kaivap.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Koki Hirokawa (WZN9ESEFF6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Koki Hirokawa (WZN9ESEFF6)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = WZN9ESEFF6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = kaivap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kitakitsune.kaivap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "fa801970-1862-4c9c-82cc-f00088053915";
 				PROVISIONING_PROFILE_SPECIFIER = kaivap_dist;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

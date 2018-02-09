@@ -1,10 +1,10 @@
-source 'https://github.com/CocoaPods/Specs.git'
-
-use_frameworks!
+# source 'https://github.com/CocoaPods/Specs.git'
+# platform :ios, "9.0"
 
 target 'kaivap' do
+  use_frameworks!
+
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'APIKit', '~> 3.1'
-  pod "Himotoki", "~> 3.1"
 end
+

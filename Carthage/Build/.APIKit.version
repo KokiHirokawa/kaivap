@@ -1,0 +1,9 @@
+{
+  "commitish" : "3.2.1",
+  "iOS" : [
+    {
+      "name" : "APIKit",
+      "hash" : "d8590c4b8239e7527fae901554d04fa650c699f555612289fef6a1b3d64494f5"
+    }
+  ]
+}

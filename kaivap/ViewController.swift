@@ -28,7 +28,6 @@ extension UIColor {
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     var locationManager: CLLocationManager!
-//    var currentLocation: CLLocation?
     var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
     var mapView: GMSMapView!
