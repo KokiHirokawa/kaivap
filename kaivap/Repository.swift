@@ -9,10 +9,16 @@
 import Himotoki
 
 struct ElevationEntity: Himotoki.Decodable {
+    let results: [ElevationEntity.ItemEntity]
     
-    let elevation: Double
-    
+    struct ItemEntity: Himotoki.Decodable {
+        let elevation: Double
+        
+        static func decode(_ e: Extractor) throws -> ElevationEntity.ItemEntity {
+            return try ItemEntity(elevation: e <| "elevation")
+        }
+    }
     static func decode(_ e: Extractor) throws -> ElevationEntity {
-        return try ElevationEntity(elevation: e <| "elevation")
+        return try ElevationEntity(results: e <|| "results")
     }
 }

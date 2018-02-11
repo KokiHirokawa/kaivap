@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06915FCA202E0DC500FE66B1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; };
+		06915FCB202E0DC500FE66B1 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06915FCC202E0DC500FE66B1 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; };
+		06915FCD202E0DC500FE66B1 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		06915FCE202E0DC500FE66B1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; };
+		06915FCF202E0DC500FE66B1 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B3201EC32D00BB8524 /* AppDelegate.swift */; };
 		0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B5201EC32D00BB8524 /* ViewController.swift */; };
 		0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0B7201EC32D00BB8524 /* Main.storyboard */; };
@@ -16,12 +22,6 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
-		0699E64C202DFE040008DF09 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; };
-		0699E64D202DFE040008DF09 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0699E64E202DFE040008DF09 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; };
-		0699E64F202DFE040008DF09 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		0699E650202DFE040008DF09 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; };
-		0699E651202DFE040008DF09 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -43,15 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0699E652202DFE050008DF09 /* Embed Frameworks */ = {
+		06915FD0202E0DC500FE66B1 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				0699E651202DFE040008DF09 /* Result.framework in Embed Frameworks */,
-				0699E64F202DFE040008DF09 /* Himotoki.framework in Embed Frameworks */,
-				0699E64D202DFE040008DF09 /* APIKit.framework in Embed Frameworks */,
+				06915FCF202E0DC500FE66B1 /* Result.framework in Embed Frameworks */,
+				06915FCD202E0DC500FE66B1 /* Himotoki.framework in Embed Frameworks */,
+				06915FCB202E0DC500FE66B1 /* APIKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,10 +87,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0699E650202DFE040008DF09 /* Result.framework in Frameworks */,
-				0699E64E202DFE040008DF09 /* Himotoki.framework in Frameworks */,
-				0699E64C202DFE040008DF09 /* APIKit.framework in Frameworks */,
+				06915FCA202E0DC500FE66B1 /* APIKit.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
+				06915FCC202E0DC500FE66B1 /* Himotoki.framework in Frameworks */,
+				06915FCE202E0DC500FE66B1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +200,8 @@
 				C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */,
 				73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */,
 				06C3B83F202DC6BE002D0E46 /* ShellScript */,
-				0699E652202DFE050008DF09 /* Embed Frameworks */,
+				06915FD0202E0DC500FE66B1 /* Embed Frameworks */,
+				069447A1202F3302006AEF99 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -321,6 +322,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		069447A1202F3302006AEF99 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+		};
 		06C3B83F202DC6BE002D0E46 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

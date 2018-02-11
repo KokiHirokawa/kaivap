@@ -15,7 +15,7 @@ protocol BaseRequest: Request {
 
 extension BaseRequest {
     var baseURL: URL {
-        return URL(string: "https://cyberjapandata2.gsi.go.jp")!
+        return URL(string: "https://maps.googleapis.com")!
     }
     
     func intercept(object: Any, urlResponse: HTTPURLResponse) throws -> Any {
@@ -34,24 +34,22 @@ extension GetRequest {
 }
 
 struct GetElevationRequest: GetRequest {
-    
     typealias Response = ElevationEntity
+
+    let locations: String
+    let APIkey = "AIzaSyCHLEjOtDRblIszplO6u6bPXuCvD1s48II"
     
-    let lat: Double
-    let lon: Double
-    
-    var path: String = "/general/dem/scripts/getelevation.php"
+    var path: String = "/maps/api/elevation/json"
     var parameters: Any? {
         return [
-            "lat": lat,
-            "lon": lon,
-            "outtype": "JSON"
+            "locations": locations,
+            "key": APIkey
         ]
     }
     
     init(lat: Double, lng: Double) {
-        self.lat = lat
-        self.lon = lng
+        self.locations = "\(lat),\(lng)"
+        print(locations)
     }
     
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {

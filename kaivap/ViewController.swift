@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import APIKit
 import GoogleMaps
+import GooglePlaces
 
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat) {
@@ -28,6 +29,7 @@ extension UIColor {
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     var locationManager: CLLocationManager!
+    var placesClient: GMSPlacesClient!
     var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
     var mapView: GMSMapView!
@@ -310,6 +312,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     @IBOutlet weak var elevationLabel: UILabel!
     @IBOutlet weak var calculateButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -317,7 +320,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
 
     func setupView() {
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
+        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 1.0)
         let footerViewHeight: CGFloat = 88.0
         let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-footerViewHeight)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
@@ -340,6 +343,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         calculateButton.layer.borderWidth = 1.0
         calculateButton.layer.borderColor = UIColor(hex: "dadada").cgColor
         calculateButton.layer.cornerRadius = 22
+        resetButton.layer.borderWidth = 1.0
+        resetButton.layer.borderColor = UIColor(hex: "dadada").cgColor
+        resetButton.layer.cornerRadius = 22
 
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -347,6 +353,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        
+        placesClient = GMSPlacesClient.shared()
+    }
+    
+    func calculateElevation(lat: Double, lng: Double) {
+        let request = GetElevationRequest(lat: lat, lng: lng)
+        Session.send(request) { result in
+            switch result {
+            case .success(let elevation):
+                let elevation = NSString(format: "%.1f", (elevation.results.first?.elevation)!)
+                self.elevationLabel.text = elevation as String
+            case .failure(let error):
+                print("error: \(error)")
+            }
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -361,15 +382,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             mapView.camera = camera
         } else {
             mapView.animate(to: camera)
-            let request = GetElevationRequest(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
-            Session.send(request) { result in
-                switch result {
-                case .success(let elevation):
-                    self.elevationLabel.text = elevation.elevation.description
-                case .failure(let error):
-                    print("error: \(error)")
-                }
-            }
+            calculateElevation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
         }
     }
 
@@ -387,12 +400,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             print("Location status is OK.")
         }
     }
-
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
     }
-
+    
     func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
         currentCameraPosition = position
     }
@@ -400,18 +413,44 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     @IBAction func didPressCalculateButton(_ sender: Any) {
 
         if let currentCameraPosition = currentCameraPosition {
-            let request = GetElevationRequest(lat: currentCameraPosition.target.latitude, lng: currentCameraPosition.target.longitude)
+            calculateElevation(lat: currentCameraPosition.target.latitude, lng: currentCameraPosition.target.longitude)
+        }
+    }
+    
+    @IBAction func didPressResetButton(_ sender: Any) {
+        
+        var latitude: Double?
+        var longitude: Double?
+        
+        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
+            
+            if let error = error {
+                print("Pick Place error: \(error.localizedDescription)")
+                return
+            }
+            print(placeLikelihoodList?.likelihoods.first?.place)
+            
+            if let placeLikelihoodList = placeLikelihoodList {
+                if let place = placeLikelihoodList.likelihoods.first?.place {
+                    latitude = place.coordinate.latitude
+                    longitude = place.coordinate.longitude
+                }
+            }
+        })
+        
+        if let lat = latitude, let lng = longitude {
+            let request = GetElevationRequest(lat: lat, lng: lng)
             Session.send(request) { result in
                 switch result {
                 case .success(let elevation):
-                    self.elevationLabel.text = elevation.elevation.description
+                    self.elevationLabel.text = elevation.results.first?.elevation.description
                 case .failure(let error):
                     print("error: \(error)")
                 }
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
