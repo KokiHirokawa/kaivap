@@ -30,6 +30,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     var locationManager: CLLocationManager!
     var placesClient: GMSPlacesClient!
+    var currentLocation: CLLocationCoordinate2D?
     var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
     var mapView: GMSMapView!
@@ -371,18 +372,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location: CLLocation = locations.last!
-
-        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                              longitude: location.coordinate.longitude,
-                                              zoom: zoomLevel)
-
-        if mapView.isHidden {
-            mapView.isHidden = false
-            mapView.camera = camera
-        } else {
-            mapView.animate(to: camera)
-            calculateElevation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+        if let location = locations.last {
+            currentLocation = location.coordinate
+            let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                                  longitude: location.coordinate.longitude,
+                                                  zoom: zoomLevel)
+            
+            if mapView.isHidden {
+                mapView.isHidden = false
+                mapView.animate(to: camera)
+            } else {
+                mapView.animate(to: camera)
+                calculateElevation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
+            }
         }
     }
 
@@ -419,35 +421,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     @IBAction func didPressResetButton(_ sender: Any) {
         
-        var latitude: Double?
-        var longitude: Double?
-        
-        placesClient.currentPlace(callback: { (placeLikelihoodList, error) -> Void in
-            
-            if let error = error {
-                print("Pick Place error: \(error.localizedDescription)")
-                return
-            }
-            print(placeLikelihoodList?.likelihoods.first?.place)
-            
-            if let placeLikelihoodList = placeLikelihoodList {
-                if let place = placeLikelihoodList.likelihoods.first?.place {
-                    latitude = place.coordinate.latitude
-                    longitude = place.coordinate.longitude
-                }
-            }
-        })
-        
-        if let lat = latitude, let lng = longitude {
-            let request = GetElevationRequest(lat: lat, lng: lng)
-            Session.send(request) { result in
-                switch result {
-                case .success(let elevation):
-                    self.elevationLabel.text = elevation.results.first?.elevation.description
-                case .failure(let error):
-                    print("error: \(error)")
-                }
-            }
+        if let currentLocation = currentLocation {
+            self.mapView.animate(toLocation: currentLocation)
+            self.self.calculateElevation(lat: currentLocation.latitude, lng: currentLocation.longitude)
         }
     }
     

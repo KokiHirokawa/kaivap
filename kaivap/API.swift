@@ -49,7 +49,6 @@ struct GetElevationRequest: GetRequest {
     
     init(lat: Double, lng: Double) {
         self.locations = "\(lat),\(lng)"
-        print(locations)
     }
     
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
