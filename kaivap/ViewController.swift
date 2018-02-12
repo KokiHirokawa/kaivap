@@ -363,8 +363,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         Session.send(request) { result in
             switch result {
             case .success(let elevation):
-                let elevation = NSString(format: "%.1f", (elevation.results.first?.elevation)!)
-                self.elevationLabel.text = elevation as String
+                if let elevation = elevation.results.first?.elevation {
+                    if elevation == 0 {
+                        self.elevationLabel.text = "0(計測不能)"
+                    } else {
+                        let text = NSString(format: "%.1f", elevation)
+                        self.elevationLabel.text = text as String
+                    }
+                }
             case .failure(let error):
                 print("error: \(error)")
             }
