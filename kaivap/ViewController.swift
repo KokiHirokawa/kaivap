@@ -341,13 +341,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         view.addSubview(mapView)
         view.sendSubview(toBack: mapView)
 
-        calculateButton.layer.borderWidth = 1.0
-        calculateButton.layer.borderColor = UIColor(hex: "dadada").cgColor
-        calculateButton.layer.cornerRadius = 22
-        resetButton.layer.borderWidth = 1.0
-        resetButton.layer.borderColor = UIColor(hex: "dadada").cgColor
-        resetButton.layer.cornerRadius = 22
-
         locationManager = CLLocationManager()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
@@ -360,13 +353,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func calculateElevation(lat: Double, lng: Double) {
         let request = GetElevationRequest(lat: lat, lng: lng)
-        Session.send(request) { result in
+        Session.send(request) { [weak self] result in
+            guard let `self` = self else { return }
+            
             switch result {
             case .success(let elevation):
                 if let elevation = elevation.results.first?.elevation {
                     if elevation == 0 {
+                        self.elevationLabel.textColor = UIColor.init(hex: "CB1B45")
                         self.elevationLabel.text = "0(計測不能)"
                     } else {
+                        if elevation > 5 {
+                            self.elevationLabel.textColor = UIColor.init(hex: "333333")
+                        } else {
+                            self.elevationLabel.textColor = UIColor.init(hex: "DB4D6D")
+                        }
                         let text = NSString(format: "%.1f", elevation)
                         self.elevationLabel.text = text as String
                     }
