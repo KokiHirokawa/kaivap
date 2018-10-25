@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -27,21 +25,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0N-MM-VkA">
-                                        <rect key="frame" x="186" y="0.0" width="2" height="579"/>
+                                        <rect key="frame" x="186.5" y="0.0" width="2" height="579"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="2" id="trd-fO-fwe"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWL-nj-Z53">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="2"/>
+                                        <rect key="frame" x="0.0" y="288.5" width="375" height="2"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="t0i-1H-864"/>
                                         </constraints>
                                     </view>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="marker" translatesAutoresizingMaskIntoConstraints="NO" id="iEg-cE-l95">
-                                        <rect key="frame" x="171" y="257.5" width="32" height="32"/>
+                                        <rect key="frame" x="171.5" y="257.5" width="32" height="32"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="32" id="7cS-ns-b92"/>
@@ -49,14 +47,35 @@
                                             <constraint firstAttribute="width" secondItem="iEg-cE-l95" secondAttribute="height" multiplier="1:1" id="qt8-ye-WCV"/>
                                         </constraints>
                                     </imageView>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3EQ-bP-n4Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                        <color key="backgroundColor" red="1" green="0.76748985449999996" blue="0.45157732540000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88" id="5B3-aN-GHD"/>
+                                        </constraints>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHy-3A-oac">
+                                            <size key="itemSize" width="32" height="32"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="fvG-lw-MbS"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="op2-bO-kWQ"/>
+                                        </connections>
+                                    </collectionView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="gWL-nj-Z53" firstAttribute="centerY" secondItem="yic-H9-zl5" secondAttribute="centerY" id="1DS-sV-wpa"/>
                                     <constraint firstItem="A0N-MM-VkA" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="top" id="1cz-bD-Okz"/>
                                     <constraint firstItem="gWL-nj-Z53" firstAttribute="leading" secondItem="yic-H9-zl5" secondAttribute="leading" id="Mwq-yb-isj"/>
+                                    <constraint firstItem="3EQ-bP-n4Z" firstAttribute="leading" secondItem="yic-H9-zl5" secondAttribute="leading" id="Nt8-9j-6bf"/>
                                     <constraint firstItem="iEg-cE-l95" firstAttribute="centerY" secondItem="yic-H9-zl5" secondAttribute="centerY" constant="-16" id="PtS-ao-I8B"/>
                                     <constraint firstItem="iEg-cE-l95" firstAttribute="centerX" secondItem="yic-H9-zl5" secondAttribute="centerX" id="SVD-f5-yEn"/>
+                                    <constraint firstItem="3EQ-bP-n4Z" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="top" id="To6-4I-58w"/>
+                                    <constraint firstAttribute="trailing" secondItem="3EQ-bP-n4Z" secondAttribute="trailing" id="Yuk-jZ-yh5"/>
                                     <constraint firstAttribute="trailing" secondItem="gWL-nj-Z53" secondAttribute="trailing" id="emW-q9-vrP"/>
                                     <constraint firstItem="A0N-MM-VkA" firstAttribute="centerX" secondItem="yic-H9-zl5" secondAttribute="centerX" id="k44-ca-1bu"/>
                                     <constraint firstAttribute="bottom" secondItem="A0N-MM-VkA" secondAttribute="bottom" id="vMU-QL-p3B"/>
@@ -195,6 +214,7 @@
                     </view>
                     <connections>
                         <outlet property="calculateButton" destination="ewY-P4-0zd" id="HQi-X1-Toh"/>
+                        <outlet property="collectionView" destination="3EQ-bP-n4Z" id="QRZ-5B-9Zo"/>
                         <outlet property="elevationLabel" destination="fRS-RB-W13" id="O6k-Ne-1XB"/>
                         <outlet property="resetButton" destination="aYi-iF-h2d" id="gjf-bI-3Vk"/>
                     </connections>

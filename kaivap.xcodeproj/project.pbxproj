@@ -17,6 +17,8 @@
 		0693B0D4201EC32D00BB8524 /* kaivapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0D3201EC32D00BB8524 /* kaivapUITests.swift */; };
 		0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E1201F2A2D00BB8524 /* Repository.swift */; };
 		0693B0E4201F30FD00BB8524 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0E3201F30FD00BB8524 /* API.swift */; };
+		06C17AAC2182152500F772F5 /* PinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C17AAA2182152500F772F5 /* PinCell.swift */; };
+		06C17AAF2182158500F772F5 /* PinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C17AAE2182158500F772F5 /* PinCell.xib */; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,8 @@
 		0693B0D5201EC32D00BB8524 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0693B0E1201F2A2D00BB8524 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		0693B0E3201F30FD00BB8524 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		06C17AAA2182152500F772F5 /* PinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCell.swift; sourceTree = "<group>"; };
+		06C17AAE2182158500F772F5 /* PinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinCell.xib; sourceTree = "<group>"; };
 		06C3B839202DC5F6002D0E46 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		06C3B83A202DC5F6002D0E46 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		06C3B83B202DC5F6002D0E46 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
@@ -122,6 +126,8 @@
 				0693B0BA201EC32D00BB8524 /* Assets.xcassets */,
 				0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */,
 				0693B0BF201EC32D00BB8524 /* Info.plist */,
+				06C17AAA2182152500F772F5 /* PinCell.swift */,
+				06C17AAE2182158500F772F5 /* PinCell.xib */,
 			);
 			path = kaivap;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0693B0BE201EC32D00BB8524 /* LaunchScreen.storyboard in Resources */,
+				06C17AAF2182158500F772F5 /* PinCell.xib in Resources */,
 				0693B0BB201EC32D00BB8524 /* Assets.xcassets in Resources */,
 				0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */,
 				0693611A2182085E007B6C26 /* GoogleMapStyle.json in Resources */,
@@ -398,6 +405,7 @@
 			files = (
 				0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */,
 				0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */,
+				06C17AAC2182152500F772F5 /* PinCell.swift in Sources */,
 				0693B0E4201F30FD00BB8524 /* API.swift in Sources */,
 				0693B0E2201F2A2D00BB8524 /* Repository.swift in Sources */,
 			);

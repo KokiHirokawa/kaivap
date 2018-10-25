@@ -34,13 +34,23 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
     var mapView: GMSMapView!
+    
+    var locations: [LocationEntity] = []
+    
+    struct LocationEntity {
+        let latitude: Double
+        let longitude: Double
+        let elevation: Double
+    }
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var elevationLabel: UILabel!
     @IBOutlet weak var calculateButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.register(UINib(nibName: "PinCell", bundle: nil), forCellWithReuseIdentifier: "PinCell")
         setupView()
     }
 
@@ -98,6 +108,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
                         }
                         let text = NSString(format: "%.1f", elevation)
                         self.elevationLabel.text = text as String
+                        
+                        let location = LocationEntity(latitude: lat, longitude: lng, elevation: elevation)
+                        self.locations.append(location)
+                        print(self.locations)
+                        
+                        self.collectionView.reloadData()
                     }
                 }
             case .failure(let error):
@@ -158,11 +174,50 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         
         if let currentLocation = currentLocation {
             self.mapView.animate(toLocation: currentLocation)
-            self.self.calculateElevation(lat: currentLocation.latitude, lng: currentLocation.longitude)
+            self.calculateElevation(lat: currentLocation.latitude, lng: currentLocation.longitude)
         }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PinCell", for: indexPath) as! PinCell
+        cell.delegate = self
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let location = locations[indexPath.row]
+        print(location)
+        
+        let camera = GMSCameraPosition.camera(withLatitude: location.latitude,
+                                              longitude: location.longitude,
+                                              zoom: zoomLevel)
+        mapView.animate(to: camera)
+        
+        let elevation = location.elevation
+        
+        if elevation > 5 {
+            elevationLabel.textColor = UIColor.init(hex: "333333")
+        } else {
+            elevationLabel.textColor = UIColor.init(hex: "DB4D6D")
+        }
+        
+        let text = NSString(format: "%.1f", elevation)
+        elevationLabel.text = text as String
     }
 }
