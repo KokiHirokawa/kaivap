@@ -7,12 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		06915FCA202E0DC500FE66B1 /* APIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; };
-		06915FCB202E0DC500FE66B1 /* APIKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83B202DC5F6002D0E46 /* APIKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		06915FCC202E0DC500FE66B1 /* Himotoki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; };
-		06915FCD202E0DC500FE66B1 /* Himotoki.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B83A202DC5F6002D0E46 /* Himotoki.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		06915FCE202E0DC500FE66B1 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; };
-		06915FCF202E0DC500FE66B1 /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 06C3B839202DC5F6002D0E46 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0693611A2182085E007B6C26 /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 069361192182085E007B6C26 /* GoogleMapStyle.json */; };
 		0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B3201EC32D00BB8524 /* AppDelegate.swift */; };
 		0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B5201EC32D00BB8524 /* ViewController.swift */; };
 		0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0B7201EC32D00BB8524 /* Main.storyboard */; };
@@ -42,23 +37,8 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		06915FD0202E0DC500FE66B1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				06915FCF202E0DC500FE66B1 /* Result.framework in Embed Frameworks */,
-				06915FCD202E0DC500FE66B1 /* Himotoki.framework in Embed Frameworks */,
-				06915FCB202E0DC500FE66B1 /* APIKit.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		069361192182085E007B6C26 /* GoogleMapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GoogleMapStyle.json; path = ../../../../Desktop/GoogleMapStyle.json; sourceTree = "<group>"; };
 		0693B0B0201EC32D00BB8524 /* kaivap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaivap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B3201EC32D00BB8524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693B0B5201EC32D00BB8524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,10 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06915FCA202E0DC500FE66B1 /* APIKit.framework in Frameworks */,
 				D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */,
-				06915FCC202E0DC500FE66B1 /* Himotoki.framework in Frameworks */,
-				06915FCE202E0DC500FE66B1 /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +113,7 @@
 		0693B0B2201EC32D00BB8524 /* kaivap */ = {
 			isa = PBXGroup;
 			children = (
+				069361192182085E007B6C26 /* GoogleMapStyle.json */,
 				0693B0B3201EC32D00BB8524 /* AppDelegate.swift */,
 				0693B0B5201EC32D00BB8524 /* ViewController.swift */,
 				0693B0B7201EC32D00BB8524 /* Main.storyboard */,
@@ -200,7 +178,6 @@
 				C3B99155D9A95B34F7AB673A /* [CP] Embed Pods Frameworks */,
 				73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */,
 				06C3B83F202DC6BE002D0E46 /* ShellScript */,
-				06915FD0202E0DC500FE66B1 /* Embed Frameworks */,
 				069447A1202F3302006AEF99 /* ShellScript */,
 			);
 			buildRules = (
@@ -302,6 +279,7 @@
 				0693B0BE201EC32D00BB8524 /* LaunchScreen.storyboard in Resources */,
 				0693B0BB201EC32D00BB8524 /* Assets.xcassets in Resources */,
 				0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */,
+				0693611A2182085E007B6C26 /* GoogleMapStyle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
