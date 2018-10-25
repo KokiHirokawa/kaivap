@@ -57,7 +57,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func setupView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 1.0)
         let footerViewHeight: CGFloat = 88.0
-        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-footerViewHeight)
+        let mapViewSize = CGRect(x: 0, y: 88.0, width: view.bounds.width, height: view.bounds.height-footerViewHeight*2)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
         
@@ -191,7 +191,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PinCell", for: indexPath) as! PinCell
-        cell.delegate = self
         return cell
     }
     
@@ -202,8 +201,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let location = locations[indexPath.row]
-        print(location)
-        
         let camera = GMSCameraPosition.camera(withLatitude: location.latitude,
                                               longitude: location.longitude,
                                               zoom: zoomLevel)

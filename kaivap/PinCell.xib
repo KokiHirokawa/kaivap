@@ -24,20 +24,12 @@
                             <constraint firstAttribute="width" secondItem="rj5-RV-Zxj" secondAttribute="height" multiplier="1:1" id="YpS-SA-dAH"/>
                         </constraints>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plK-HR-c6z">
-                        <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </button>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="plK-HR-c6z" secondAttribute="bottom" id="5Sg-FG-XBc"/>
-                <constraint firstItem="plK-HR-c6z" firstAttribute="leading" secondItem="vRM-hs-ZT1" secondAttribute="leading" id="843-wn-63O"/>
                 <constraint firstItem="rj5-RV-Zxj" firstAttribute="top" secondItem="vRM-hs-ZT1" secondAttribute="top" id="Cg4-aI-dWZ"/>
                 <constraint firstItem="rj5-RV-Zxj" firstAttribute="leading" secondItem="vRM-hs-ZT1" secondAttribute="leading" id="Pmd-iK-RET"/>
-                <constraint firstAttribute="trailing" secondItem="plK-HR-c6z" secondAttribute="trailing" id="Y7z-WO-YZX"/>
                 <constraint firstAttribute="bottom" secondItem="rj5-RV-Zxj" secondAttribute="bottom" id="jUd-nV-CYF"/>
-                <constraint firstItem="plK-HR-c6z" firstAttribute="top" secondItem="vRM-hs-ZT1" secondAttribute="top" id="nU7-0r-0rX"/>
                 <constraint firstAttribute="trailing" secondItem="rj5-RV-Zxj" secondAttribute="trailing" id="noy-AJ-DNc"/>
             </constraints>
             <point key="canvasLocation" x="136" y="-104.34782608695653"/>
