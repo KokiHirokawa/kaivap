@@ -118,6 +118,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         }
     }
     
+    // elevationの設定を纏める
+    func setElevation(_ elevation: ElevationEntity) {
+    }
+    
     // 凄まじくダサい
     // ElevationEntity.ItemEntityでlat, lngを受け取る
     func mark(lat: Double, lng: Double, elavation: String) {

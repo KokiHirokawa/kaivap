@@ -26,3 +26,4 @@ Carthage/*
 *.swp
 !.gitkeep
 .DS_Store
+kaivap/Resources/key.plist
