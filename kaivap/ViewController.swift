@@ -200,6 +200,9 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        let cell = collectionView.cellForItem(at: indexPath) as! PinCell
+        cell.animate()
+        
         let location = locations[indexPath.row]
         let camera = GMSCameraPosition.camera(withLatitude: location.latitude,
                                               longitude: location.longitude,

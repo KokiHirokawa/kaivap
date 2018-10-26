@@ -32,6 +32,9 @@
                 <constraint firstAttribute="bottom" secondItem="rj5-RV-Zxj" secondAttribute="bottom" id="jUd-nV-CYF"/>
                 <constraint firstAttribute="trailing" secondItem="rj5-RV-Zxj" secondAttribute="trailing" id="noy-AJ-DNc"/>
             </constraints>
+            <connections>
+                <outlet property="pinImageView" destination="rj5-RV-Zxj" id="LBf-eN-CIk"/>
+            </connections>
             <point key="canvasLocation" x="136" y="-104.34782608695653"/>
         </collectionViewCell>
     </objects>
