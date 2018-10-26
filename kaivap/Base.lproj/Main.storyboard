@@ -60,13 +60,13 @@
                                     <constraint firstAttribute="bottom" secondItem="A0N-MM-VkA" secondAttribute="bottom" id="vMU-QL-p3B"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3EQ-bP-n4Z">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                            <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3EQ-bP-n4Z">
+                                <rect key="frame" x="0.0" y="20" width="375" height="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="5B3-aN-GHD"/>
+                                    <constraint firstAttribute="height" constant="32" id="5B3-aN-GHD"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHy-3A-oac">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHy-3A-oac">
                                     <size key="itemSize" width="32" height="32"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -201,7 +201,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="3EQ-bP-n4Z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4gO-sq-2aW"/>
-                            <constraint firstItem="3EQ-bP-n4Z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="5MZ-Yc-Xkn"/>
+                            <constraint firstItem="3EQ-bP-n4Z" firstAttribute="top" secondItem="PTg-M0-qnD" secondAttribute="bottom" id="5MZ-Yc-Xkn"/>
                             <constraint firstItem="rbe-dm-dAW" firstAttribute="bottom" secondItem="jai-tR-XNT" secondAttribute="top" id="9Lk-3O-hdp"/>
                             <constraint firstItem="rbe-dm-dAW" firstAttribute="top" secondItem="yic-H9-zl5" secondAttribute="bottom" id="KgB-8d-y48"/>
                             <constraint firstItem="yic-H9-zl5" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="TXZ-YW-4hI"/>

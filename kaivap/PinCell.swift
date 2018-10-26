@@ -14,19 +14,17 @@ class PinCell: UICollectionViewCell {
 
     @IBOutlet weak var pinImageView: UIImageView!
     
+    override var isSelected: Bool {
+        didSet {
+            if self.isSelected {
+                self.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
+            } else {
+                self.transform = CGAffineTransform.identity
+            }
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-    }
-    
-    func animate() {
-        UIView.animate(withDuration: 0.3, animations: { [weak self] in
-            self?.transform = CGAffineTransform(scaleX: 1.2, y: 1.2)
-        })
-    }
-    
-    // longGesture or SwipeGesture
-    // delete location
-    func deleteMarker() {
-        
     }
 }
