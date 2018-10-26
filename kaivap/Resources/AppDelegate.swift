@@ -13,11 +13,12 @@ import GooglePlaces
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    let APIKey = "AIzaSyCz8lY-HE6f5XIzLrX8LHAVSrGYDy9Bwjg"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        GMSServices.provideAPIKey(APIKey)
-        GMSPlacesClient.provideAPIKey(APIKey)
+        guard let keyPlistFilePath = Bundle.main.path(forResource: "key", ofType: "plist") else { return true }
+        guard let keyDictionary = NSDictionary(contentsOfFile: keyPlistFilePath) as? [String: Any] else { return true }
+        
+        GMSServices.provideAPIKey(keyDictionary["GoogleMapsAPIKey"] as! String)
         return true
     }
 

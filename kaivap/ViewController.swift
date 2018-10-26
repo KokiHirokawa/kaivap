@@ -12,24 +12,9 @@ import APIKit
 import GoogleMaps
 import GooglePlaces
 
-extension UIColor {
-    convenience init(hex: String, alpha: CGFloat) {
-        let v = hex.map { String($0) } + Array(repeating: "0", count: max(6 - hex.count, 0))
-        let r = CGFloat(Int(v[0] + v[1], radix: 16) ?? 0) / 255.0
-        let g = CGFloat(Int(v[2] + v[3], radix: 16) ?? 0) / 255.0
-        let b = CGFloat(Int(v[4] + v[5], radix: 16) ?? 0) / 255.0
-        self.init(red: r, green: g, blue: b, alpha: alpha)
-    }
-
-    convenience init(hex: String) {
-        self.init(hex: hex, alpha: 1.0)
-    }
-}
-
 class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
 
     var locationManager: CLLocationManager!
-    var placesClient: GMSPlacesClient!
     var currentLocation: CLLocationCoordinate2D?
     var currentCameraPosition: GMSCameraPosition?
     var zoomLevel: Float = 15.0
@@ -50,6 +35,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 纏める
         collectionView.register(UINib(nibName: "PinCell", bundle: nil), forCellWithReuseIdentifier: "PinCell")
         setupView()
     }
@@ -61,7 +47,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
         
-        let path = Bundle.main.path(forResource: "GoogleMapStyle", ofType: "json")
+        let path = Bundle.main.path(forResource: "GoogleMapsStyle", ofType: "json")
         
         do {
             let content = try String(contentsOfFile: path!)
@@ -79,8 +65,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
-        
-        placesClient = GMSPlacesClient.shared()
     }
     
     func calculateElevation(lat: Double, lng: Double) {
@@ -132,19 +116,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            currentLocation = location.coordinate
-            let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
-                                                  longitude: location.coordinate.longitude,
-                                                  zoom: zoomLevel)
-            
-            if mapView.isHidden {
-                mapView.isHidden = false
-                mapView.animate(to: camera)
-            } else {
-                mapView.animate(to: camera)
-                calculateElevation(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
-            }
+        guard let location = locations.last else { return }
+        
+        currentLocation = location.coordinate
+        let camera = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
+                                              longitude: location.coordinate.longitude,
+                                              zoom: zoomLevel)
+        if mapView.isHidden {
+            mapView.isHidden = false
+            mapView.camera = camera
+        } else {
+            mapView.animate(to: camera)
         }
     }
     
@@ -191,6 +173,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    // collectionViewはスクロール出来るようにする
+    // 現状下に段が生成される
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1

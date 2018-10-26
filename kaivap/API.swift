@@ -14,6 +14,7 @@ protocol BaseRequest: Request {
 }
 
 extension BaseRequest {
+    // これひとつしか使ってないのでワザワザこんなことしなくていい
     var baseURL: URL {
         return URL(string: "https://maps.googleapis.com")!
     }
@@ -37,7 +38,12 @@ struct GetElevationRequest: GetRequest {
     typealias Response = ElevationEntity
 
     let locations: String
-    let APIKey = "AIzaSyCHLEjOtDRblIszplO6u6bPXuCvD1s48II"
+    var APIKey: String {
+        guard let keyPlistFilePath = Bundle.main.path(forResource: "key", ofType: "plist") else { return "" }
+        guard let keyDictionary = NSDictionary(contentsOfFile: keyPlistFilePath) as? [String: Any] else { return "" }
+        
+        return keyDictionary["GoogleMapsElevationAPIKey"] as! String
+    }
     
     var path: String = "/maps/api/elevation/json"
     var parameters: Any? {
