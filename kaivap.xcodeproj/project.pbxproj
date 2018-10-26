@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0693611A2182085E007B6C26 /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 069361192182085E007B6C26 /* GoogleMapStyle.json */; };
 		0693B0B4201EC32D00BB8524 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B3201EC32D00BB8524 /* AppDelegate.swift */; };
 		0693B0B6201EC32D00BB8524 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0693B0B5201EC32D00BB8524 /* ViewController.swift */; };
 		0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0693B0B7201EC32D00BB8524 /* Main.storyboard */; };
@@ -20,6 +19,7 @@
 		06C17AAC2182152500F772F5 /* PinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C17AAA2182152500F772F5 /* PinCell.swift */; };
 		06C17AAF2182158500F772F5 /* PinCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C17AAE2182158500F772F5 /* PinCell.xib */; };
 		06C17B012182CDC200F772F5 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = 06C17B002182CDC200F772F5 /* key.plist */; };
+		06C17B072182D01D00F772F5 /* GoogleMapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 06C17B032182CE1900F772F5 /* GoogleMapStyle.json */; };
 		D88665A70A84D4FB890E3872 /* Pods_kaivap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3483E314A65B40FC9FD2CEAB /* Pods_kaivap.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
@@ -41,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		069361192182085E007B6C26 /* GoogleMapStyle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = GoogleMapStyle.json; path = ../../../../Desktop/GoogleMapStyle.json; sourceTree = "<group>"; };
 		0693B0B0201EC32D00BB8524 /* kaivap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kaivap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0693B0B3201EC32D00BB8524 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0693B0B5201EC32D00BB8524 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		06C17AAA2182152500F772F5 /* PinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinCell.swift; sourceTree = "<group>"; };
 		06C17AAE2182158500F772F5 /* PinCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinCell.xib; sourceTree = "<group>"; };
 		06C17B002182CDC200F772F5 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
+		06C17B032182CE1900F772F5 /* GoogleMapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GoogleMapStyle.json; sourceTree = "<group>"; };
 		06C3B839202DC5F6002D0E46 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		06C3B83A202DC5F6002D0E46 /* Himotoki.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Himotoki.framework; path = Carthage/Build/iOS/Himotoki.framework; sourceTree = "<group>"; };
 		06C3B83B202DC5F6002D0E46 /* APIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = APIKit.framework; path = Carthage/Build/iOS/APIKit.framework; sourceTree = "<group>"; };
@@ -119,18 +119,14 @@
 		0693B0B2201EC32D00BB8524 /* kaivap */ = {
 			isa = PBXGroup;
 			children = (
-				069361192182085E007B6C26 /* GoogleMapStyle.json */,
-				0693B0B3201EC32D00BB8524 /* AppDelegate.swift */,
+				06C17B022182CDE400F772F5 /* Resources */,
 				0693B0B5201EC32D00BB8524 /* ViewController.swift */,
 				0693B0B7201EC32D00BB8524 /* Main.storyboard */,
 				0693B0E3201F30FD00BB8524 /* API.swift */,
 				0693B0E1201F2A2D00BB8524 /* Repository.swift */,
-				0693B0BA201EC32D00BB8524 /* Assets.xcassets */,
-				0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */,
 				0693B0BF201EC32D00BB8524 /* Info.plist */,
 				06C17AAA2182152500F772F5 /* PinCell.swift */,
 				06C17AAE2182158500F772F5 /* PinCell.xib */,
-				06C17B002182CDC200F772F5 /* key.plist */,
 			);
 			path = kaivap;
 			sourceTree = "<group>";
@@ -151,6 +147,18 @@
 				0693B0D5201EC32D00BB8524 /* Info.plist */,
 			);
 			path = kaivapUITests;
+			sourceTree = "<group>";
+		};
+		06C17B022182CDE400F772F5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0693B0B3201EC32D00BB8524 /* AppDelegate.swift */,
+				0693B0BC201EC32D00BB8524 /* LaunchScreen.storyboard */,
+				0693B0BA201EC32D00BB8524 /* Assets.xcassets */,
+				06C17B032182CE1900F772F5 /* GoogleMapStyle.json */,
+				06C17B002182CDC200F772F5 /* key.plist */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		109E77EE6C8BB2F6E00AEA73 /* Frameworks */ = {
@@ -285,12 +293,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C17B072182D01D00F772F5 /* GoogleMapStyle.json in Resources */,
 				0693B0BE201EC32D00BB8524 /* LaunchScreen.storyboard in Resources */,
 				06C17AAF2182158500F772F5 /* PinCell.xib in Resources */,
 				0693B0BB201EC32D00BB8524 /* Assets.xcassets in Resources */,
 				0693B0B9201EC32D00BB8524 /* Main.storyboard in Resources */,
 				06C17B012182CDC200F772F5 /* key.plist in Resources */,
-				0693611A2182085E007B6C26 /* GoogleMapStyle.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +330,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone";
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
 		};
 		06C3B83F202DC6BE002D0E46 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -338,7 +346,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		73B44771CC9186AB6C5E1F41 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
