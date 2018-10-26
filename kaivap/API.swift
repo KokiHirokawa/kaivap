@@ -37,13 +37,13 @@ struct GetElevationRequest: GetRequest {
     typealias Response = ElevationEntity
 
     let locations: String
-    let APIkey = "AIzaSyCHLEjOtDRblIszplO6u6bPXuCvD1s48II"
+    let APIKey = "AIzaSyCHLEjOtDRblIszplO6u6bPXuCvD1s48II"
     
     var path: String = "/maps/api/elevation/json"
     var parameters: Any? {
         return [
             "locations": locations,
-            "key": APIkey
+            "key": APIKey
         ]
     }
     
@@ -52,6 +52,7 @@ struct GetElevationRequest: GetRequest {
     }
     
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
+        print(object)
         return try decodeValue(object)
     }
 }

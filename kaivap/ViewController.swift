@@ -57,7 +57,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func setupView() {
         let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 1.0)
         let footerViewHeight: CGFloat = 88.0
-        let mapViewSize = CGRect(x: 0, y: 88.0, width: view.bounds.width, height: view.bounds.height-footerViewHeight*2)
+        let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-footerViewHeight)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
         
@@ -70,12 +70,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             NSLog("One or more of the map styles failed to load. \(error)")
         }
         mapView.delegate = self
-
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
         view.addSubview(mapView)
         view.sendSubview(toBack: mapView)
 
@@ -95,31 +89,42 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             guard let `self` = self else { return }
             
             switch result {
-            case .success(let elevation):
-                if let elevation = elevation.results.first?.elevation {
-                    if elevation == 0 {
-                        self.elevationLabel.textColor = UIColor.init(hex: "CB1B45")
-                        self.elevationLabel.text = "0(計測不能)"
+            case .success(let object):
+                guard let item = object.results.first else { return }
+                
+                if item.elevation == 0 {
+                    self.elevationLabel.textColor = UIColor.init(hex: "CB1B45")
+                    self.elevationLabel.text = "0(計測不能)"
+                } else {
+                    if item.elevation > 5 {
+                        self.elevationLabel.textColor = UIColor.init(hex: "333333")
                     } else {
-                        if elevation > 5 {
-                            self.elevationLabel.textColor = UIColor.init(hex: "333333")
-                        } else {
-                            self.elevationLabel.textColor = UIColor.init(hex: "DB4D6D")
-                        }
-                        let text = NSString(format: "%.1f", elevation)
-                        self.elevationLabel.text = text as String
-                        
-                        let location = LocationEntity(latitude: lat, longitude: lng, elevation: elevation)
-                        self.locations.append(location)
-                        print(self.locations)
-                        
-                        self.collectionView.reloadData()
+                        self.elevationLabel.textColor = UIColor.init(hex: "DB4D6D")
                     }
+                    
+                    self.elevationLabel.text = item.formattedElevation
+                    
+                    let location = LocationEntity(latitude: lat, longitude: lng, elevation: item.elevation)
+                    self.locations.append(location)
+                    
+                    self.mark(lat: lat, lng: lng, elavation: item.formattedElevation)
+                    
+                    self.collectionView.reloadData()
                 }
+                
             case .failure(let error):
                 print("error: \(error)")
             }
         }
+    }
+    
+    // 凄まじくダサい
+    // ElevationEntity.ItemEntityでlat, lngを受け取る
+    func mark(lat: Double, lng: Double, elavation: String) {
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lng)
+        marker.snippet = elavation
+        marker.map = mapView
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -138,7 +143,24 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             }
         }
     }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        currentCameraPosition = position
+    }
 
+    @IBAction func didPressCalculateButton(_ sender: Any) {
+        guard let currentCameraPosition = currentCameraPosition else { return }
+
+        calculateElevation(lat: currentCameraPosition.target.latitude, lng: currentCameraPosition.target.longitude)
+    }
+    
+    @IBAction func didPressResetButton(_ sender: Any) {
+        guard let currentLocation = currentLocation else { return }
+        
+        mapView.animate(toLocation: currentLocation)
+        calculateElevation(lat: currentLocation.latitude, lng: currentLocation.longitude)
+    }
+    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .restricted:
@@ -157,25 +179,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         locationManager.stopUpdatingLocation()
         print("Error: \(error)")
-    }
-    
-    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
-        currentCameraPosition = position
-    }
-
-    @IBAction func didPressCalculateButton(_ sender: Any) {
-
-        if let currentCameraPosition = currentCameraPosition {
-            calculateElevation(lat: currentCameraPosition.target.latitude, lng: currentCameraPosition.target.longitude)
-        }
-    }
-    
-    @IBAction func didPressResetButton(_ sender: Any) {
-        
-        if let currentLocation = currentLocation {
-            self.mapView.animate(toLocation: currentLocation)
-            self.calculateElevation(lat: currentLocation.latitude, lng: currentLocation.longitude)
-        }
     }
     
     override func didReceiveMemoryWarning() {
