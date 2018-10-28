@@ -36,8 +36,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 纏める
-        collectionView.register(UINib(nibName: "PinCell", bundle: nil), forCellWithReuseIdentifier: "PinCell")
         setupView()
     }
 
@@ -47,15 +45,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         let mapViewSize = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height-footerViewHeight)
         mapView = GMSMapView.map(withFrame: mapViewSize, camera: camera)
         mapView.isMyLocationEnabled = true
-        
-        let path = Bundle.main.path(forResource: "GoogleMapsStyle", ofType: "json")
-        
-        do {
-            let content = try String(contentsOfFile: path!)
-            mapView.mapStyle = try GMSMapStyle(jsonString: content)
-        } catch {
-            NSLog("One or more of the map styles failed to load. \(error)")
-        }
         mapView.delegate = self
         view.addSubview(mapView)
         view.sendSubview(toBack: mapView)
@@ -66,6 +55,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        
+        collectionView.register(UINib(nibName: "PinCell", bundle: nil), forCellWithReuseIdentifier: "PinCell")
     }
     
     func calculateElevation(lat: Double, lng: Double) {
@@ -174,9 +165,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    
-    // collectionViewはスクロール出来るようにする
-    // 現状下に段が生成される
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
